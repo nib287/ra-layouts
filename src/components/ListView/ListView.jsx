@@ -4,9 +4,9 @@ import ShopItem from '../ShopItem/ShopItem'
 
 function ListView({items}) {
     return (
-        <div className='CardsView'>
+        <ul className='ListView'>
             {items.map((item, index) =>  <ShopItem item={item} key={index}/>)}
-        </div>
+        </ul>
     )
 }
 

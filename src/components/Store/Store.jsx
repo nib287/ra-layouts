@@ -9,7 +9,7 @@ function Store({products}) {
 	return (
 		<div className='Store'>
 			<IconSwitch icon={"view_module"} onSwitch={(e) => console.log(e)} />
-			{state === 'view_module' ? <CardsView cards={products} /> : <ListView cards={products} />}
+			<ListView items={products} />
 		</div>
 	)
 }
@@ -20,3 +20,4 @@ export default Store;
 // view_module  view_list
 
 
+// {state === 'view_module' ? <CardsView cards={products} /> : <ListView cards={products} />}

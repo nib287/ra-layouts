@@ -1,19 +1,19 @@
 import React from 'react';
 import './ShopItem.css';
 
-function ShopCard({item}) {
+function ShopItem({item}) {
     return (
-        <div className='ShopCard'>
-            <header className='ShopCard-Header'>
-                <h2 className='ShopCard-Title'>{item.name}</h2>
-                <h3 className='ShopCard-Subtitle'>{item.color}</h3>
-            </header>
-            <img className='ShopCard-Img' src={item.img} alt="" />
-            <span className='ShopCard-price'>${item.price}</span>
-            <button className='ShopCard-button'>add to cart</button>
-        </div>
-    )
+        <li className='ShopItem'>
+            <img className='ShopItem-Img' src={item.img} alt="" />
+            <h2 className='ShopItem-Title'>{item.name}</h2>
+            <h3 className='ShopItem-Subtitle'>{item.color}</h3>
+            <span className='ShopItem-Price'>${item.price}</span>
+            <button className='ShopItem-Button'>add to cart</button>
+        </li>
+    );
 }
 
 
-export default ShopCard
+export default ShopItem;
+
+
