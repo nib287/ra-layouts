@@ -5,11 +5,19 @@ import CardsView from '../CardsView/CardsView';
 import ListView from '../ListView/ListView';
 
 function Store({products}) {
-	const [state, setState] = React.useState('view_module');
+	const [state, setState] = React.useState('view_list');
+	const onSwitch = () => {
+		if(state === 'view_list') {
+			setState('view_module')
+		} else {
+			setState('view_list')
+		}
+	}
+	
 	return (
 		<div className='Store'>
-			<IconSwitch icon={"view_module"} onSwitch={(e) => console.log(e)} />
-			<ListView items={products} />
+			<IconSwitch icon={state} onSwitch={onSwitch} />
+			{state === 'view_module' ? <ListView items={products} /> : <CardsView cards={products} />}
 		</div>
 	)
 }
@@ -17,7 +25,3 @@ function Store({products}) {
 export default Store;
 
 
-// view_module  view_list
-
-
-// {state === 'view_module' ? <CardsView cards={products} /> : <ListView cards={products} />}
